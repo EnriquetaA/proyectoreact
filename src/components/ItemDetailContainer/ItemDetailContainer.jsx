@@ -1,0 +1,35 @@
+import { useEffect, useState } from "react";
+
+export const ItemListContainer = () => {
+  const [detail, setDetail] = useState({});
+  const {id} = useParams();
+  
+  useEffect(() => {
+    fetch("/data/products.json")
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("No se encontro el producto");
+      }
+
+      return res.json();
+    })
+    .then(() => {
+      const found = data.find(prod => prod.id === id)
+      if(found){
+        setDetail(found);
+      }else {
+        throw new Error("producto no encontrado");
+      }
+    })
+    .catch(() => {});
+  }, [id]);
+  return (
+     <main>
+       {Object.keys(detail).length ? (
+        <ItemDetail detail={detail} />
+       ) : (
+        <p>Cargando...</p>
+       )}
+  </main>
+ );
+};

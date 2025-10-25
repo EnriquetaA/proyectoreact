@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Portátil Apple MacBook Pro",
+    "precio": 1999,
+    "categoría": "Electronica",
+    "descripción": "Portátil de alto rendimiento con pantalla Retina de 13 pulgadas, chip Apple M1, 8 GB de RAM y 256 GB de SSD.",
+    "imagen_url": "https://i.ibb.co/cDj3dpX/Apple-Mac-Book-Pro.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Consola PlayStation 5",
+    "precio": 499,
+    "categoría": "Electronica",
+    "descripción": "Consola de juegos de última generación con gráficos en 4K, SSD ultrarrápido y retrocompatibilidad con juegos de PS4.",
+    "imagen_url": "https://miweb.com/imagenes/mochila1.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Cámara Sony Alpha A7 III",
+    "precio": 1999,
+    "categoría": "Electronica",
+    "descripción": "Camara mirrorless con sensor full-frame de 24.2 MP, grabación de vídeo 4K HDR y sistema de enfoque automático rápido.",
+    "imagen_url": "https://i.ibb.co/ZHT2r1s/C-mara-Sony-Alpha-A7-III.png"
+  }
+]
