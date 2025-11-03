@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { ItemDetail } from "../ItemDetail/ItemDetail";
 
 export const ItemListContainer = () => {
   const [detail, setDetail] = useState({});

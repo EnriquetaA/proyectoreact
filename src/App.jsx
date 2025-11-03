@@ -1,17 +1,21 @@
-
-import './App.css';
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import { Nav } from "./components/Nav/Nav";
+import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
+import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
+import { CartProvider} from "./context/CartContext/CartProvider";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Nav /> 
+         <CartProvider>
+           <Nav /> 
         <Routes>
-           <Route path="/" element= {<ItemListContainer />} />
-           {/*<Route path="/detail/:id" element={}/> */} *ojo element={}: Aquí deberías colocar el componente que se renderiza cuando se accede a esa ruta. Por ejemplo:
-
-        </Routes>
+           <Route path="/" element={<ItemListContainer />} />
+           <Route path="/detail/:id" element={<ItemDetailContainer />} />
+         </Routes>
+         </CartProvider>
       </BrowserRouter>
     </>
   ); 

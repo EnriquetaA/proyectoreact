@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { ItemList } from "../ItemList/ItemList";
 
 export const ItemListContainer = () => {
-const [products, setProduts] = useState([])
+const [products, setProducts] = useState([])
 
 useEffect(()=>{
     fetch("/data/products.json")
@@ -12,7 +13,7 @@ useEffect(()=>{
       return res.json();
     })
     .then((data) => {
-      setProduts(data)  
+      setProducts(data)  
     })
     .catch((err) => {
       console.log(err);
