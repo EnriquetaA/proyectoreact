@@ -1,0 +1,12 @@
+.Count-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.Count-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

@@ -2,20 +2,20 @@ import { useState } from "react";
 import { CartContext } from "./CartContext";
 
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
+    const [Cart, setCart] = useState([]);
 
     const exists = (id) => {
-        const exist = cart.some((p) => p.id === id);
+        const exist = Cart.some((p) => p.id === id);
         return exist;
     };
 
-    const addItem = (item) => {
+     const addItem = (item) => {
         if (exists(item.id)) {
             alert("El producto ya existe en el carrito");
             return;
         };
 
-        setCart([...cart, item]);
+        setCart([...Cart, item]);
         alert('${item.name} agregado')
     };
 
@@ -24,17 +24,17 @@ export const CartProvider = ({ children }) => {
     }
 
     const getTotalItems = () => {
-       if (cart.length) {
-        return cart.length;
+       if (Cart.length) {
+        return Cart.length;
        }
     };
 
     const values = {
-        cart, 
+        Cart, 
         addItem, 
         clearCart, 
         getTotalItems,
     };
 
-    return <CartContext.provider value={values}>{children}/</CartContext.provider>;
+    return <CartContext.Provider value={values}>{children}</CartContext.Provider>;
 };

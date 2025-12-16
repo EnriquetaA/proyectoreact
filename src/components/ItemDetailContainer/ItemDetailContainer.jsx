@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 
-export const ItemListContainer = () => {
+export const ItemDetailContainer = () => {
   const [detail, setDetail] = useState({});
-  const {id} = useParams();
-  
+  const { id } = useParams();
+
   useEffect(() => {
     fetch("/data/products.json")
     .then((res) => {
@@ -15,12 +15,12 @@ export const ItemListContainer = () => {
 
       return res.json();
     })
-    .then(() => {
+    .then((data) => {
       const found = data.find(prod => prod.id === id)
       if(found){
         setDetail(found);
       }else {
-        throw new Error("producto no encontrado");
+        throw new Error("Producto no encontrado");
       }
     })
     .catch(() => {});

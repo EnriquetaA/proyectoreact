@@ -1,5 +1,5 @@
 import { createContext } from "react-router-dom";
 
-export { createContext } from "react";
+import { createContext } from "react";
 
 export const CartContext = createContext();
